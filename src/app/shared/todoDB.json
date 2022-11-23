@@ -1,0 +1,19 @@
+{
+  "todolist": [
+    {
+      "id": 2,
+      "task": "football",
+      "status": false
+    },
+    {
+      "id": 3,
+      "task": "music",
+      "status": false
+    },
+    {
+      "id": 4,
+      "task": "learn more",
+      "status": false
+    }
+  ]
+}

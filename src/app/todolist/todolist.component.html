@@ -1,0 +1,42 @@
+
+
+
+    <div class="card" style="border-radius: 15px;">
+        <div class="card-body p-5">
+
+          <h6 class="mb-3">TODO List</h6>
+
+          <div class="form-outline flex-fill d-flex justify-content-center align-items-center mb-4">
+              <input type="text" [(ngModel)]="curr_task_name" id="form3" class="form-control form-control-lg bg-secondary" placeholder="Enter your task"/>
+              
+              <!-- <label class="form-label" for="form3"></label> -->
+              <button *ngIf="show_add_btn" type="submit" (click)="add_todo_restapi()" class="btn btn-primary btn-lg ms-2">Add</button>
+              <button *ngIf="show_up_btn" type="submit" (click)="update_todo_restapi()" class="btn btn-primary btn-lg ms-2">Update</button>
+            </div>
+          <!-- \<ul *ngFor="let todo of todos; index as i" class="list-group mb-0"> -->
+            <table class="table align-middle mb-0 bg-white table table-hover">
+                <thead class="bg-light">
+                  <tr>
+                    <th>ID</th>
+                    <th>TASK</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let todo of todos; index as i" > <!--ANGULAR For LOOP-->
+                       
+                        <td>{{todo.id}}</td>
+                        <td>{{todo.task}}</td>
+                        <td>{{todo.status}}</td>
+                        <td><a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i
+                            class="fas fa-pencil-alt me-3" (click)="edit_task_restapi(todo.task,todo.id)"></i></a>
+                            <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i
+                                class="fas fa-trash-alt" (click)="delete_task_restapi(todo.id)"></i></a>
+                            </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+      </div>
